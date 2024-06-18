@@ -2,7 +2,8 @@
 
 UADER-music Web diseñada para la materia Arquitecturas Backend 2024. Gestiona Artistas, albumes y canciones 
 
-![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/954cb433-8976-4a17-af70-94cff2ae0d39)
+![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/c125d1d9-1069-4bbd-9a64-5a0aa7803077)
+
 
 ## Características
 
@@ -10,14 +11,17 @@ UADER-music Web diseñada para la materia Arquitecturas Backend 2024. Gestiona A
 - **Gestión de Álbumes**: Agrega y visualizar álbumes.
 - **Gestión de Canciones**: Agrega y visualiza Canciones y sus datos.
 
-![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/b3c6846e-929a-4d84-bd28-e97028731fe1)
+
 
 - carga de nueva cancion
-- ![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/08ca09c4-a281-413c-8d0d-2b218035a61a)
+
+![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/5b8ae97a-4f38-4be9-aa68-e5c16e1ae7f3)
+
 
 - muestra de datos segun su eleccion
-  ![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/a7cb89fc-786e-4a2f-b7ad-6618204732b0)
- 
+
+ ![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/bb6ac2c3-e543-4932-81c4-009f545bd734)
+
 
 ### Instalacion
 
