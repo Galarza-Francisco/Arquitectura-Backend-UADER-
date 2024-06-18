@@ -20,10 +20,11 @@ UADER-music Web diseñada para la materia Arquitecturas Backend 2024. Gestiona A
 
 - muestra de datos segun su eleccion
 
- ![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/bb6ac2c3-e543-4932-81c4-009f545bd734)
+ ![image](https://github.com/Galarza-Francisco/Arquitectura-Backend-UADER-/assets/91553669/34b6ba7f-5bb4-4e73-919d-2f3bc7f9d3e0)
 
 
-### Instalacion
+
+### Instalación
 
 - git clone https://github.com/tu_usuario/UADER-music.git
 - cd UADER-music
