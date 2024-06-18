@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('funko_api.urls')),
     path('', include('pokemon.urls')),
+    path('', include('musica_api.urls')),
 ]

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUSICA DISPLAY</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <style>
+      .card {
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav class="bg-red-500 p-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1>
+          <a
+            href="{% url 'home' %}"
+            class="text-white hover:text-gray-200 transition-colors font-bold"
+            >UADER - Music</a
+          >
+        </h1>
+        <ul class="flex space-x-4">
+          <li>
+            <a
+              href="{% url 'nuevo_artista' %}"
+              class="text-white hover:text-gray-200 transition-colors"
+              >+ Artista</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'nuevo_album' %}"
+              class="text-white hover:text-gray-200 transition-colors"
+              >+ Álbum</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'nueva_cancion' %}"
+              class="text-white hover:text-gray-200 transition-colors"
+              >+ Canción</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div
+            class="card bg-white rounded-lg shadow-lg p-6"
+            onclick="toggleVisibility('artistas')"
+          >
+            <h2
+              class="text-2xl text-center font-semibold my-4 text-gray-500 cursor-pointer"
+            >
+              Artistas
+            </h2>
+            <img
+              src="{% static 'images/artista.jpg' %}"
+              alt="Artista"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <div id="artistas" class="hidden">
+              <table
+                class="w-full table-auto border-collapse border border-gray-300 shadow-sm mt-6"
+              >
+                <thead>
+                  <tr class="bg-gray-200 text-gray-700">
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      ID
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Nombre
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for artista in Artistas %}
+                  <tr class="bg-white hover:bg-gray-100 transition-colors">
+                    <td class="border border-gray-300 px-4 py-2">
+                      {{ artista.id }}
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                      {{ artista.nombre }}
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td
+                      colspan="3"
+                      class="border border-gray-300 px-4 py-2 text-center text-gray-500"
+                    >
+                      No hay artistas disponibles
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="card bg-white rounded-lg shadow-lg p-6"
+            onclick="toggleVisibility('albumes')"
+          >
+            <h2
+              class="text-2xl text-center font-semibold my-4 text-gray-500 cursor-pointer"
+            >
+              Álbumes
+            </h2>
+            <img
+              src="{% static 'images/album.jpg' %}"
+              alt="Álbum"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <div id="albumes" class="hidden">
+              <table
+                class="w-full table-auto border-collapse border border-gray-300 shadow-sm mt-6"
+              >
+                <thead>
+                  <tr class="bg-gray-200 text-gray-700">
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Título
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for album in Albumes %}
+                  <tr class="bg-white hover:bg-gray-100 transition-colors">
+                    <td class="border border-gray-300 px-4 py-2">
+                      {{ album.titulo }}
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td
+                      colspan="3"
+                      class="border border-gray-300 px-4 py-2 text-center text-gray-500"
+                    >
+                      No hay álbumes disponibles
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="card bg-white rounded-lg shadow-lg p-6"
+            onclick="toggleVisibility('canciones')"
+          >
+            <h2
+              class="text-2xl text-center font-semibold my-4 text-gray-500 cursor-pointer"
+            >
+              Canciones
+            </h2>
+            <img
+              src="{% static 'images/canciones.jpg' %}"
+              alt="Canción"
+              class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <div id="canciones" class="hidden">
+              <table
+                class="w-full table-auto border-collapse border border-gray-300 shadow-sm mt-6"
+              >
+                <thead>
+                  <tr class="bg-gray-200 text-gray-700">
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Título
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Album
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for cancion in Canciones %}
+                  <tr class="bg-white hover:bg-gray-100 transition-colors">
+                    <td class="border border-gray-300 px-4 py-2">
+                      {{ cancion.titulo }}
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                      {{ cancion.album }}
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td
+                      colspan="3"
+                      class="border border-gray-300 px-4 py-2 text-center text-gray-500"
+                    >
+                      No hay canciones disponibles
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains("hidden")) {
+          element.classList.remove("hidden");
+        } else {
+          element.classList.add("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>

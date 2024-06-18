@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'funko_api.apps.FunkoApiConfig',
     'pokemon.apps.PokemonConfig',
+    'musica_api.apps.MusicaApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'abcd1234',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': 5432,
     }
